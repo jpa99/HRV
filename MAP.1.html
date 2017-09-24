@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="map_style.css">
+</head>
+
+<body>
+  <div id="map"></div>
+  <!-- TEXT BOX OVERLAID ON MAP -->
+  <div id="name">
+    <h1 id="harvey"><font color="blue">H</font>urricane <font color="blue">R</font>elief <font color="blue">V</font>isualization </h1>
+    <hr width = 85%>
+    <h2 id="place_name"></h2>
+    <a href="" id="link" target="_blank" hidden="true">View on Google Maps</a>
+    <p id="text">
+        Welcome to the Hurricane Relief Visualization. This web application offers an interactive map of real-time, crowdsourced data on community needs and avaliable shelters.
+        You can find information about shelters near you, what you can donate,  
+    
+    </p>
+  </div>
+  <nav class="navbar fixed-bottom navbar-default navbar-toggleable-md navbar-primary" id="navbar" style="background-color: white">
+    <div class="form-inline"></div>
+    <!--<a class="navbar-brand" href="#">HFH</a>-->
+
+    <ul class="navbar-nav mr-auto">
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="checkbox" id="shelters_toggle" onChange="updateMaps();" checked> Shelters
+        </label>
+        <label class="btn btn-primary active">
+          <input type="checkbox" id="needs_toggle" onChange="updateMaps();" checked> Needs
+        </label>
+      </div>
+
+      <div class="dropup">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownDisplayToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Toggle Display
+            </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item"><input type="checkbox" id="markers_toggle" onClick="updateMaps();" checked> Markers</a>
+          <a class="dropdown-item"><input type="checkbox" id="overlay_toggle" onClick="updateOverlay();" checked> Info Panel</a>
+          <a class="dropdown-item"><input type="checkbox" id="opacity_toggle" onClick="updateOpacity();"> Opacity</a>
+        </div>
+      </div>
+      <li class="nav-item">
+        <a class="nav-link" href="">Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Volunteer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#" onClick="updateZoom()">Reset Zoom</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onClick="search()">Search</button>
+    </form>
+    </div>
+  </nav>
+  <!---->
+  <script src="MAPscript.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO2jf9Iv7fwK0gNvQyeY8j33mlW4ZVgQA&libraries=visualization&callback=initMap">
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<head>
+    <!--Plotly JS-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
+    <!--jquery JS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    
+    <!--tether JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+<div id="plotDiv"></div>
+<nav class="navbar fixed-top navbar-light">
+<div class="form-inline">
+  <form class="form-inline">
+    <img class="logo" src="https://triseum.com/wp-content/themes/triseum-2016/_images/_svg/Logo-Triseum.svg" id="headerLogo">
+    <button class="btn btn-info" type="button" tabindex="1"onClick="RunPlotlyLine()">Line Graph</button>
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Zone Line Filter
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="javascript:FindZoneDataLine(1);"><input type="checkbox">  Zone 1</a>
+        <a class="dropdown-item" href="javascript:FindZoneDataLine(2);"><input type="checkbox">  Zone 2</a>
+        <a class="dropdown-item" href="javascript:FindZoneDataLine(3);"><input type="checkbox"> Zone 3</a>
+        <a class="dropdown-item" href="javascript:FindZoneDataLine(4);"><input type="checkbox">  Zone 4</a>
+        <a class="dropdown-item" href="javascript:FindZoneDataLine(6);"><input type="checkbox">  Centroid</a>
+      </div>
+    </div>
+    
+    <div class="dropup">
+        <button class="btn btn-info dropdown-toggle" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filter Map
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="javascript:addMap('shelters');"><input type="checkbox">Shelters</a>
+          <a class="dropdown-item" href="javascript:addMap('needs');"><input type="checkbox">Needs</a>
+        </div>
+      </div>
+    
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Zone Filter
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="javascript:FindZoneData(1, 'fps1');"><input type="checkbox">  Zone 1</a>
+        <a class="dropdown-item" href="javascript:FindZoneData(2, 'fps1');"><input type="checkbox">  Zone 2</a>
+        <a class="dropdown-item" href="javascript:FindZoneData(3, 'fps1');"><input type="checkbox"> Zone 3</a>
+        <a class="dropdown-item" href="javascript:FindZoneData(4, 'fps1');"><input type="checkbox">  Zone 4</a>
+        <a class="dropdown-item" href="javascript:FindZoneData(6, 'fps1');"><input type="checkbox">  Centroid</a>
+      </div>
+    </div>
+    <button class="btn btn-info" id="levelBtn" type="button"tabindex="4" onClick=RunPlotly('zone1','markers')>Zone</button>
+    <button class="btn btn-info" id="levelBtn" type="button"tabindex="5" onClick=RunPlotly('zone1','lines')>Zone Lines</button>
+  </form>
+
+  <form class="form-inline">
+    <button class="btn btn-info" type="button"tabindex="6" onClick="RunPlotly('fps1','markers', true)">FPS</button>
+    <input type="number" class="form-control" tabindex="7" placeholder="Game_ID" aria-describedby="plotDiv" max="99999">
+  </form>
+</div>
+</nav>
+
+
+
+<div class="infoPane">
+    <input type='file' onchange='openFile(event)'><br>
+    <img id='output'>
+    </output>
+</div>
+    <!--Custom JS-->
+<script src="script.js"></script>
+<script>
+
+var dataSet;
+
+//take in raw csv
+//Parse CSV into JSON Objects
+
+var openFile = function(event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function(){
+        console.log(reader.result);
+        //var output = document.getElementById('output').innerHTML = reader.result;
+    };
+    reader.readAsBinaryString(input.files[0]);
+};
+
+
+
+</script>
+</body>
+

@@ -1,0 +1,146 @@
+#map {
+  height: 92.5%;
+  width: 100%;
+  /*float: right;*/
+}
+
+/* Fills window*/
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#name {
+    width: 28%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    position: absolute;
+    opacity: 1.0;
+    border-left-style: solid;
+    border-color: blue;
+    resize: both;
+    overflow: auto;
+    /*border-style: double;*/
+}
+
+#name:hover {
+    opacity: 1.0;
+}
+
+#harvey{
+  margin: 10%;
+}
+
+#place_name{
+  margin: 10%;
+}
+
+#text{
+  margin: 10%;
+}
+
+#link{
+  margin: 10%;
+}
+
+#navbar{
+  border-top-style: solid;
+  border-color: blue;
+}
+
+#map_toggle{
+  padding-right: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+    left: 0;
+    top: 0;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.modal-content {
+  
+    margin: 5% auto;
+    width: 80%;
+    padding: 20px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+
+}
+
+/* The Close Button */
+.close {
+    color: blue;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider:before {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

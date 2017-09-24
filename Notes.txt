@@ -1,0 +1,10 @@
+1. Pull Latest DB Data.
+
+2. Parse out values from the raw data and dump into a file called parsedData.csv
+
+~3. Combine data points whose coordinates are close enough.
+
+4. Find all data points for a single game_id, put that data into an object.
+
+5. send data to plot.ly
+

@@ -1,0 +1,69 @@
+
+body{
+    overflow: hidden;
+}
+
+#headerLogo{
+    display: block;
+    width:100px;
+    margin-right:15px;
+}
+
+#plotDiv {
+    height: 100%;
+    width: 100%;
+}
+
+.divider {
+    width: 2px;
+    height: 100%;
+    left: 0;
+    background-color: #FFF;
+}
+
+.navbar {
+    background-image: url("bg.jpg");
+    border-bottom-color: #333;
+    border-width: 3px;
+    border-bottom-style: solid;
+}
+
+.btn {
+    margin-right: 2px;
+    margin-left:2px;
+    border-color: #DDD;
+    background-color: #125;
+    color: #DDD;
+}
+
+.form-control {
+    background-color: #125;
+    color: #DDD;
+    max-width: 115px;
+    border-color: #DDD;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+.form-control:focus {
+    background-color: #DDD;
+}
+
+.dropdown {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.infoPane {
+    position: fixed;
+    width: 215px;
+    height: 30px;
+    bottom: 15px;
+    right: 15px;
+    background-color: #DDD;
+    cursor: pointer;
+    border: 5px;
+}
+
+.form-inline {
+    margin-bottom: 4px;
+}
