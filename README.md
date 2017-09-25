@@ -1,4 +1,5 @@
 # HRV
+Created by Joel Abraham and Will Ledig during HackRice Fall 2017.
 
 Web app featuring interactive heatmap of real-time, crowdsourced data on community needs and avaliable shelters with integrated NLP for needs magnitude analysis.
 
